@@ -1,0 +1,27 @@
+  <div class="add-fund">
+    <h2>Add a new fund</h2>
+    <form (ngSubmit)="addFund()">
+      <label for="title">Title:</label>
+      <input id="title" [(ngModel)]="newFund.title" name="title" required />
+  
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        [(ngModel)]="newFund.description"
+        name="description"
+      ></textarea>
+  
+      <label for="goal">Objectif:</label>
+      <input
+        id="goal"
+        [(ngModel)]="newFund.goal"
+        name="goal"
+        type="number"
+        min="0"
+        required
+      />
+  
+      <button type="submit">Ajouter le fond</button>
+    </form>
+  </div>
+  

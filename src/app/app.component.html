@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Crowdfunding Projects</h1>
+  
+    <button (click)="showFundForm()" class="add-fund-btn">
+      Add Fund
+    </button>
+  
+    <div *ngIf="isFormVisible" @fadeInOut>
+      <app-fund (onSubmit)="createNewFund($event)"></app-fund>
+      <div *ngIf="selectedProject" @fadeInOut>
+    </div>
+    
+</div>
+
+  
+    <div *ngIf="!isFormVisible && selectedProject" @fadeInOut>
+        <app-funding-form [project]="selectedProject" (onSubmit)="fundProject($event)">
+        </app-funding-form>
+    </div>
+  
+    <div class="projects">
+      <div *ngFor="let project of projects">
+        <app-project-card 
+          [project]="project" 
+          (select)="selectProject(project)">
+        </app-project-card>
+      </div>
+    </div>
+  </div>
+  

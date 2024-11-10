@@ -1,0 +1,10 @@
+<div class="card">
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.description }}</p>
+    <app-progress-bar [raised]="project.raised" [goal]="project.goal"></app-progress-bar>    
+    <button class="button" (click)="onSelect()">
+      Fund this project
+    </button>
+</div>
+
+<app-funding-form *ngIf="showFundingForm"></app-funding-form>

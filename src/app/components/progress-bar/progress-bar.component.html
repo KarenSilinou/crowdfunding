@@ -1,0 +1,10 @@
+<div class="progress-bar">
+  <div 
+    class="progress-bar-fill"
+    [style.width.%]="progressPercentage">
+  </div>
+</div>
+<div class="progress-info">
+  {{ raised | currency: 'USD' }} raised of {{ goal | currency: 'USD' }} goal
+  ({{ progressPercentage | number: '1.0-0' }}%)
+</div>

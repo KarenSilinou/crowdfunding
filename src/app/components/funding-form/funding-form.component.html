@@ -1,0 +1,17 @@
+<div *ngIf="project; else noProject">
+  <div class="funding-form">
+    <h2>Fund <span class="project-title">{{ project.title }}</span></h2>
+    <input
+      type="number"
+      class="input"
+      placeholder="Enter amount"
+      [(ngModel)]="amount"
+      min="1"
+      required
+    />
+    <button class="button" (click)="submitFunding()">Contribute</button>
+  </div>
+</div>
+<ng-template #noProject>
+  <p>No project selected.</p>
+</ng-template>
